@@ -1,0 +1,19 @@
+p {
+  font-family: Arial;
+}
+.apple-text {
+  margin-bottom: 50px;
+  font-size: 14px;
+  background-color: rgb(228, 65, 64);
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.span-text {
+  margin-left: 12px;
+}
+.span-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
