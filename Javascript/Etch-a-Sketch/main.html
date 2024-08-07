@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="event.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Etch-A-Sketch</h1>
+    </header>
+    <main>
+      <nav>
+        <div id="current-color"></div>
+        <div>
+          <input
+            type="color"
+            id="color-picker"
+            value="#39b5c6"
+            name="color-picker"
+          />
+        </div>
+        <button id="paint-button" autofocus>PAINT</button>
+        <button id="rainbow-button">RAINBOW</button>
+        <button id="black-button">BLACK</button>
+        <button id="eraser-button">ERASER</button>
+        <button id="clear-button" onclick="this.blur();">CLEAR</button>
+      </nav>
+      <div id="drawing-info-container">
+        <div id="drawing-board"></div>
+        <p><span id="grid-size-number">16x16</span> Grid</p>
+        <input
+          type="range"
+          min="10"
+          max="50"
+          value="16"
+          id="grid-size" 
+          name="grid-size"
+        />
+      </div>
+    </main>
+
+    <!-- <footer>
+      <p>
+        &copy;All Right Reserved. Github:<a href="https://github.com/djkier"
+          >@djkier</a
+        >
+      </p>
+    </footer> -->
+  </body>
+</html>
