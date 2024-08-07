@@ -1,71 +1,110 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100%;
-  font-family: Arial, sans-serif;
+html {
+  text-align: center;
+  font-family: monospace;
 }
 
 #calc {
   display: flex;
+  min-height: 95vh;
   justify-content: center;
+  align-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0f0f0;
+  overflow: hidden;
+  background-color: azure;
 }
 
 #container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1px;
-  border: 2px solid black;
   background-color: black;
+  border: 10px solid rgba(47,47,47,1);
+  border-radius: 4px;
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+  gap: 2px;
 }
 
 #display {
-  grid-column: span 4;
-  height: 90px;
+  grid-column: 1 / -1;
+  background-color: #b2b9b7;
   display: flex;
-  align-items: center;
-  justify-content: flex-end; 
-  border: 1px solid black;
-  background-color: #e0e0e0;
-  font-size: 40px;
-  padding-right: 10px;
-  text-align: right; 
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 5px;
+  font-size: 5.5em;
+  font-weight: initial;
+  text-shadow: 1.3px 1.3px #383838;
+  margin: 5px;
 }
 
 button {
-  padding: 20px;
-  font-size: 1.5rem;
+  margin: 1px;
+  border-radius: 5%;
   border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: initial;
+  font-size: 2em;
+  font-family: monospace;
+  color: black;
 }
 
-button:hover {
-  background-color: #ddd;
-}
-
-button.operand {
-  background-color: #f0f0f0; /* Light grey background for operand buttons */
-}
-
-button.operator {
-  background-color: red; /* Red background for operator buttons */
-  color: white; /* White text color for better contrast */
-}
-
-button.clear {
-  background-color: blue; /* Blue background for the clear button */
-  color: white; /* White text color for better contrast */
-}
-
-button.equals {
-  background-color: yellow; /* Yellow background for the equals button */
-  color: black; /* Black text color for better contrast */
-}
 
 #zero {
   grid-column: span 2;
+}
+
+.operator {
+  background-color: #FF8F1F;    
+}
+
+.operator:focus {
+  background-color: #ffc183;
+}
+
+.equals {
+  background-color: #FF8F1F;
+}
+
+.equals:active {
+  background-color: #ffc183;
+}
+
+.operand {
+  background-color: #217C7E;
+}
+
+.operand:active {
+  background-color: #33b9bb;
+}
+
+.decimal {
+  background-color: #217C7E;
+}
+
+.decimal:active {
+  background-color: #33b9bb;
+}
+
+.clear {
+  background-color: dodgerblue;
+}
+
+.clear:active {
+  background-color: rgb(123, 189, 255);
+}
+
+.sign {
+  background-color: dodgerblue;
+}
+
+.sign:active {
+  background-color: rgb(123, 189, 255);
+}
+
+.percent {
+  background-color: dodgerblue;
+}
+
+.percent:active {
+  background-color: rgb(123, 189, 255);
 }
