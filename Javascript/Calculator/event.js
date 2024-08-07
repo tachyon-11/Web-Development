@@ -20,6 +20,13 @@ signButton.addEventListener("click", ()=>{
   display.textContent = content;
 });
 
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    buttons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+  });
+});
+
 operand.forEach((button) => {
   button.addEventListener("click", () => {
     if (!bool) {
@@ -28,13 +35,6 @@ operand.forEach((button) => {
     }
     content += button.value;
     display.textContent = content;
-  });
-});
-
-buttons.forEach((button) => {
-  button.addEventListener("click", () => {
-    buttons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
   });
 });
 
