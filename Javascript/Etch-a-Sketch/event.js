@@ -62,11 +62,7 @@ function windowLoad(divNum) {
       } else if(rainbowClicked){
         colorPicker.value = generateNewColor();
         newDiv.style.backgroundColor = colorPicker.value;
-        let hoverCount = parseInt(newDiv.dataset.hoverCount, 10);
-        hoverCount++;
-        newDiv.dataset.hoverCount = hoverCount;
-        let newOpacity = Math.min(1, hoverCount * 0.1);
-        newDiv.style.opacity = newOpacity;
+        newDiv.style.opacity = 1;
       } else if(blackClicked){
         colorPicker.value = "#000000";
         newDiv.style.backgroundColor = colorPicker.value;
