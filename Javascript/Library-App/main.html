@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library Management</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="event.js" defer></script>
+  </head>
+  <body>
+    <div class="main-page">
+      <div class="top-bar">
+        <div class="logo">
+          <div class="online">Online</div>
+          <div class="library">Library</div>
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Search Books" />
+          <button>
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="nav-icons">
+          <i class="fas fa-book"></i>
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-user"></i>
+        </div>
+      </div>
+      <div class="library-page">
+        <div class="catalogue">
+          <div class="browse-add-book-row">
+            <div class="browse-title">Browse the Library</div>
+            <button class="add-book-button">Add Book</button>
+          </div>
+          <div class="filters">
+            <div class="filter-group">
+              <select id="genre" name="genre">
+                <option value="genre">Genre</option>
+                <option value="fiction">Fiction</option>
+                <option value="non-fiction">Non-fiction</option>
+                <option value="fantasy">Fantasy</option>
+                <option value="mystery">Mystery</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <select id="year" name="year">
+                <option value="Year">year</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <select id="status" name="status">
+                <option value="status">Status</option>
+                <option value="available">Available</option>
+                <option value="checked-out">Checked Out</option>
+                <option value="reserved">Reserved</option>
+              </select>
+            </div>
+          </div>
+          <div class="view-books">
+            <div class="book-card" onclick="highlightCard(this)">
+              <div class="book-title">Book Title 1</div>
+              <div class="book-info">Author: Author Name</div>
+              <div class="book-info">Year: 2021</div>
+            </div>
+            <!-- Add more book cards here -->
+          </div>
+        </div>
+        <div class="overview">Overview</div>
+      </div>
+    </div>
+  </body>
+</html>
