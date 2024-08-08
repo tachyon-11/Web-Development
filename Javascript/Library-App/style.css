@@ -89,6 +89,7 @@ body, html {
   margin-right: 70px;
 }
 .browse-add-book-row {
+  flex:1;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,6 +115,7 @@ body, html {
   background-color: #add8e6; /* Lightened blue for hover effect */
 }
 .filters {
+  flex:1;
   background-color: #1a1a1a; /* Same as main background */
   padding: 5px;
   border: none; /* No border */
@@ -138,7 +140,7 @@ body, html {
   color: #87ceeb; /* Text color matches top bar */
 }
 .view-books {
-  flex: 7;
+  flex: 6;
   background-color: #1a1a1a; /* Same as main background */
   margin-bottom: 5px;
   padding: 5px;
@@ -181,3 +183,4 @@ body, html {
   border: none; /* No border */
   color: #f0f8ff; /* Light text color */
 }
+

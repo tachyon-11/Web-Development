@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library Management</title>
     <link rel="stylesheet" href="style.css" />
-    <script type="module" src="event.js" defer></script>
+    <script type="module" src="addBook.js" defer></script>
   </head>
   <body>
+    <dialog id="dialog">
+    </dialog>
     <div class="main-page">
       <div class="top-bar">
         <div class="logo">
@@ -61,15 +63,15 @@
             </div>
           </div>
           <div class="view-books">
-            <div class="book-card" onclick="highlightCard(this)">
+            <div class="book-card">
               <div class="book-title">Book Title 1</div>
               <div class="book-info">Author: Author Name</div>
               <div class="book-info">Year: 2021</div>
             </div>
-            <!-- Add more book cards here -->
           </div>
         </div>
         <div class="overview">Overview</div>
+        
       </div>
     </div>
   </body>
