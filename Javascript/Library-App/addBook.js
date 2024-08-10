@@ -134,7 +134,6 @@ addBookButton.addEventListener("click", () => {
     const summary = document.getElementById("summary").value;
     const read = document.getElementById("read").checked;
 
-    // Create a new Book instance
     const newBook = new Book(
       title,
       author,
@@ -147,10 +146,8 @@ addBookButton.addEventListener("click", () => {
     );
 
     console.log(newBook);
-    // Add the new book to the books array
     books.push(newBook);
 
-    // Create a new book card and add it to the view
     const newCard = document.createElement("div");
     newCard.className = "book-card";
 
