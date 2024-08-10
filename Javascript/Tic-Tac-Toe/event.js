@@ -59,32 +59,14 @@ function game() {
   };
 }
 
-const newGame = game();
-
-const scoreCard = document.querySelector(".score-card");
-const gameBoard = document.querySelector(".game");
-
-const player1Score = document.createElement("div");
-player1Score.className = "player-score";
-player1Score.textContent = player1;
-
-const player2Score = document.createElement("div");
-player2Score.className = "player-score";
-player2Score.textContent = player2;
-
-scoreCard.appendChild(player1Score);
-scoreCard.appendChild(player2Score);
-
-var currPlayer = "1";
-var moves = 0;
-
 function createGrid() {
+  newGame = game();
   const gameGrid = document.createElement("div");
   gameGrid.className = "gameGrid";
   for (let i = 0; i < 9; i++) {
     let gameCell = document.createElement("div");
     gameCell.addEventListener("click", () => {
-      if (gameCell.textContent === "1" || gameCell.textContent === "2") {
+      if (gameCell.textContent === "X" || gameCell.textContent === "O") {
         return;
       }
 
@@ -102,7 +84,7 @@ function createGrid() {
       const moveEvent = new CustomEvent("moveMade", { detail: { moves } });
       document.dispatchEvent(moveEvent);
 
-      currPlayer = currPlayer === "1" ? "2" : "1";
+      currPlayer = currPlayer === "X" ? "O" : "X";
     });
     gameGrid.appendChild(gameCell);
   }
@@ -110,46 +92,76 @@ function createGrid() {
   return gameGrid;
 }
 
-gameBoard.appendChild(createGrid());
+const scoreCard = document.querySelector(".score-card");
+const gameBoard = document.querySelector(".game");
+var currPlayer = "X";
+var moves = 0;
+var newGame = game();
 
-const popup = document.createElement("dialog");
-const closeBtn = document.createElement("button");
-closeBtn.textContent = "Close";
-closeBtn.addEventListener("click", () => {
+function resetGame() {
   gameBoard.replaceChildren();
   gameBoard.appendChild(createGrid());
-  popup.close();
+  gameBoard.appendChild(popup);
+  currPlayer = "X";
+  moves = 0;
+}
+
+const player1Score = document.createElement("div");
+player1Score.className = "player-score";
+player1Score.textContent = player1;
+
+const player2Score = document.createElement("div");
+player2Score.className = "player-score";
+player2Score.textContent = player2;
+
+const resetButton = document.createElement("button");
+resetButton.textContent = "RESET";
+resetButton.addEventListener("click", () =>{
+  resetGame();
 });
 
-popup.appendChild(closeBtn);
+scoreCard.appendChild(player1Score);
+scoreCard.appendChild(resetButton);
+scoreCard.appendChild(player2Score);
 
+var popup = document.createElement("dialog");
+var closeBtn = document.createElement("button");
+closeBtn.textContent = "Close";
+closeBtn.addEventListener("click", () => {
+  resetGame();
+  popup.close();
+  popup.replaceChildren();
+});
+
+gameBoard.appendChild(createGrid());
 gameBoard.appendChild(popup);
 
 document.addEventListener("moveMade", (event) => {
   console.log(`Number of moves: ${event.detail.moves}`);
   let winner = newGame.checkWinner();
-  console.log(winner);
-
-  if (winner === "1" || winner === "2") {
+  if (winner === "X" || winner === "O") {
     setTimeout(() => {
       let message = `Player ${winner} wins!`;
       let newMessage = document.createElement("p");
       newMessage.textContent = message;
       popup.appendChild(newMessage);
+      popup.appendChild(closeBtn);
       popup.showModal();
 
-      if(winner==="1"){
+      if (winner === "X") {
         player1++;
         player1Score.textContent = player1;
-      }
-      else{
+      } else {
         player2++;
         player2Score.textContent = player2;
       }
     }, 0);
   } else if (event.detail.moves === 9) {
-    setTimeout(() => {
-      alert("Game Over! It's a tie.");
-    }, 0);
+    let message = "Tie!!!";
+    let newMessage = document.createElement("p");
+    newMessage.textContent = message;
+    popup.appendChild(newMessage);
+    popup.appendChild(closeBtn);
+    popup.showModal();
   }
 });
