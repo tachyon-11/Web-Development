@@ -53,8 +53,6 @@ let books = [
   )
 ];
 
-console.log(books);
-
 const addBookButton = document.querySelector(".add-book-button");
 const formPopup = document.querySelector("dialog");
 const viewBooks = document.querySelector(".view-books");
