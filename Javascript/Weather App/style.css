@@ -1,0 +1,66 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.searchBar {
+  width: 50%;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.mainDisplay {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.weatherCard {
+  margin-top: 50px;
+  width: 300px;
+  height: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.location-dropdown {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  z-index: 1000;
+}
+
+.location-dropdown li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.location-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
