@@ -1,5 +1,6 @@
 import { searchLocations } from "./searchLocation.js";
 import { getWeather } from "./getWeather.js";
+import { dailyWeather } from "./dailyWeather.js";
 
 const mainPage = document.querySelector(".main");
 
@@ -34,6 +35,7 @@ function showDropdown(locations) {
       const weatherDesc = document.createElement("div");
       weatherDesc.className = "weatherDesc";
       weatherDesc.textContent =  weatherData[0]["Headline"]["Text"];
+      weatherDesc.appendChild(dailyWeather(weatherData[0]["DailyForecasts"]));
 
       if(weatherCard.childElementCount!=0){
         weatherCard.replaceChildren();
